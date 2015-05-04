@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'fmr_dataset/index'
+
+  get 'fmr_dataset/new'
+
+  get 'fmr_dataset/create'
+
+  get 'fmr_dataset/destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
