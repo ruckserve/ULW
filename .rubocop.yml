@@ -1,0 +1,65 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  RunRailsCops: true
+  Include:
+    - Rakefile
+  Exclude:
+    - bin/**/*
+    - db/**/*
+    - vendor/**/*
+
+
+# Rubocop Style Choices
+
+Lint/EndAlignment:
+  AlignWith: variable
+
+Metrics/LineLength:
+  Max: 140
+
+Style/AccessModifierIndentation:
+  EnforcedStyle: outdent
+
+Style/AlignHash:
+  EnforcedLastArgumentHashStyle: ignore_implicit
+
+Style/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+  Exclude:
+    - app/controllers/api/*
+    - config/application.rb
+
+Style/DotPosition:
+  EnforcedStyle: trailing
+
+Style/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Style/RaiseArgs:
+  EnforcedStyle: compact
+
+# Temporary Rubocop TODO exclusions:
+# We might want to fix these at some point, but in the mean time we don't want to disable the cop for other files.
+
+Lint/Void:
+  Exclude:
+    - spec/**/*
+
+Rails/Delegate:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 59
+
+Metrics/CyclomaticComplexity:
+  Max: 14
+
+Metrics/MethodLength:
+  Max: 30
+
+Metrics/PerceivedComplexity:
+  Max: 10
