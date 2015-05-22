@@ -1,0 +1,15 @@
+= simple_form_for(@fair_mkt_rent) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :fmr0
+    = f.input :fmr1
+    = f.input :fmr2
+    = f.input :fmr3
+    = f.input :fmr4
+    = f.input :metro_code
+    = f.input :year
+    = f.association :fmr_dataset
+
+  .form-actions
+    = f.button :submit

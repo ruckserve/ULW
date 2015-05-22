@@ -1,0 +1,11 @@
+= simple_form_for(@fmr_dataset) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :requested_by
+    = f.input :data_year
+    = f.input :method
+    = f.input :description
+
+  .form-actions
+    = f.button :submit

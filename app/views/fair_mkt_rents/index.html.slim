@@ -1,0 +1,35 @@
+h1 Listing fair_mkt_rents
+
+table
+  thead
+    tr
+      th Fmr0
+      th Fmr1
+      th Fmr2
+      th Fmr3
+      th Fmr4
+      th Metro code
+      th Year
+      th Fmr dataset
+      th
+      th
+      th
+
+  tbody
+    - @fair_mkt_rents.each do |fair_mkt_rent|
+      tr
+        td = fair_mkt_rent.fmr0
+        td = fair_mkt_rent.fmr1
+        td = fair_mkt_rent.fmr2
+        td = fair_mkt_rent.fmr3
+        td = fair_mkt_rent.fmr4
+        td = fair_mkt_rent.metro_code
+        td = fair_mkt_rent.year
+        td = fair_mkt_rent.fmr_dataset
+        td = link_to 'Show', fair_mkt_rent
+        td = link_to 'Edit', edit_fair_mkt_rent_path(fair_mkt_rent)
+        td = link_to 'Destroy', fair_mkt_rent, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Fair mkt rent', new_fair_mkt_rent_path

@@ -1,0 +1,2 @@
+module FairMktRentsHelper
+end

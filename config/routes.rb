@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
-  get 'fmr_dataset/index'
+  resources :fair_mkt_rents
 
-  get 'fmr_dataset/new'
-
-  get 'fmr_dataset/create'
-
-  get 'fmr_dataset/destroy'
+  resources :fmr_datasets
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

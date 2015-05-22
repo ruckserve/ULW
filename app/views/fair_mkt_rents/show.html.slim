@@ -1,0 +1,30 @@
+p#notice = notice
+
+p
+  strong Fmr0:
+  = @fair_mkt_rent.fmr0
+p
+  strong Fmr1:
+  = @fair_mkt_rent.fmr1
+p
+  strong Fmr2:
+  = @fair_mkt_rent.fmr2
+p
+  strong Fmr3:
+  = @fair_mkt_rent.fmr3
+p
+  strong Fmr4:
+  = @fair_mkt_rent.fmr4
+p
+  strong Metro code:
+  = @fair_mkt_rent.metro_code
+p
+  strong Year:
+  = @fair_mkt_rent.year
+p
+  strong Fmr dataset:
+  = @fair_mkt_rent.fmr_dataset
+
+= link_to 'Edit', edit_fair_mkt_rent_path(@fair_mkt_rent)
+'|
+= link_to 'Back', fair_mkt_rents_path

@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Requested by:
+  = @fmr_dataset.requested_by
+p
+  strong Data year:
+  = @fmr_dataset.data_year
+p
+  strong Method:
+  = @fmr_dataset.method
+p
+  strong Description:
+  = @fmr_dataset.description
+
+= link_to 'Edit', edit_fmr_dataset_path(@fmr_dataset)
+'|
+= link_to 'Back', fmr_datasets_path

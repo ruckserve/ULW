@@ -1,0 +1,48 @@
+h1 Load Spreadsheet to Database
+
+= simple_form_for @fmr_dataset, { wrapper: :vertical_form } do |f|
+  .row
+    .col-sm-4
+      = f.input :data_year, required: false
+    .col-sm-8
+      = f.input :requested_by, required: false
+  .row
+    .col-sm-12
+      = f.input :description, required: false, as: :text
+    .col-xs-12
+      h3 : span.label.label-default Worksheet & Column Names
+      = f.simple_fields_for :dataset_var do |fa|
+        .row
+          .col-sm-12
+            = fa.input :sheetname, required: false, label: 'Worksheet name'
+        .row
+          .col-sm-2
+            = fa.input :fmr0, required: false
+          .col-sm-2
+            = fa.input :fmr1, required: false
+          .col-sm-2
+            = fa.input :fmr2, required: false
+          .col-sm-2
+            = fa.input :fmr3, required: false
+          .col-sm-2
+            = fa.input :fmr4, required: false
+        .row
+          .col-sm-3
+            = fa.input :metro_code, required: false
+          .col-sm-3
+            = fa.input :metro_area, required: false
+          .col-sm-3
+            = fa.input :area_name, required: false
+          .col-sm-3
+            = fa.input :state, required: false
+        .row
+          h3 : span.label.label-default Upload Excel File
+          br
+          .col-xs-12
+            = fa.input :filename, required: false, as: :file, wrapper: :vertical_file_input
+        .row
+          .col-xs-1.col-xs-offset-8
+            = link_to 'Back', fmr_datasets_path, class: 'btn btn-link btn-lg'
+          .col-xs-2
+            = f.submit 'Upload to Database', class: 'btn btn-lg btn-primary'
+

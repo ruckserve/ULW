@@ -42,9 +42,6 @@ Style/MultilineOperationIndentation:
 Style/RaiseArgs:
   EnforcedStyle: compact
 
-# Temporary Rubocop TODO exclusions:
-# We might want to fix these at some point, but in the mean time we don't want to disable the cop for other files.
-
 Lint/Void:
   Exclude:
     - spec/**/*
