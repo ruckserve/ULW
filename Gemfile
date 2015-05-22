@@ -33,3 +33,8 @@ group :development, :test do
   gem 'spring'
 end
 
+group :assets do
+  gem 'therubyracer'
+  gem 'coffee-rails', "~> 4.1.0"
+  gem 'uglifier', '~> 2.7.1'
+end
