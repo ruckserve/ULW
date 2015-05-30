@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  resources :fair_mkt_rents
 
-  resources :fmr_datasets
+  resources :fmr_datasets, except: [:edit, :update]
+
+  resources :fair_mkt_rents, only: [:index, :show]
+
+  resource :calculate, only: [:show, :new]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

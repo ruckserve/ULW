@@ -1,0 +1,5 @@
+- flash.each do |msg_type, message|
+    .row
+      .col-xs-12 class=flash_class(msg_type)
+        = button_tag(raw('&times;'), class: 'close', data: {dismiss: 'alert'})
+        = message.strip
