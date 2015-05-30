@@ -46,13 +46,18 @@ class FmrDatasetsController < ApplicationController
 
     @fmr_dataset.dataset_var.filename = path
 
-    @fmr_dataset.transaction do
-      @fmr_dataset.dataset_var.save
-      @fmr_dataset.save
+    begin
+      @fmr_dataset.transaction do
+        service.persist if service
+        @fmr_dataset.dataset_var.save!
+        @fmr_dataset.save!
+      end
+    rescue
+      not_persisted = true
     end
 
     respond_to do |format|
-      if @fmr_dataset.persisted?
+      unless not_persisted
         format.html { redirect_to @fmr_dataset, notice: 'Fmr dataset was successfully created.' }
         format.json { render :show, status: :created, location: @fmr_dataset }
       else
