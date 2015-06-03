@@ -1,4 +1,5 @@
 h3 New calculation
 
-= @fmr_areas.each do |fa|
-  = JSON.dump(fa)
+- fmr = FairMktRent.new
+= simple_form_for fmr do |f|
+  = f.input 'fmr0'
