@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20150517231848) do
     t.string   "metro_code",               null: false
     t.string   "state",          limit: 2, null: false
     t.string   "area_name",                null: false
-    t.string   "metro_area",               null: false
+    t.boolean  "metro_area",               null: false
     t.string   "year",                     null: false
     t.integer  "fmr_dataset_id"
     t.datetime "created_at",               null: false

@@ -4,7 +4,7 @@ class CreateFmrAreas < ActiveRecord::Migration
       t.string :metro_code,      null: false
       t.string :state, limit: 2, null: false
       t.string :area_name,       null: false
-      t.string :metro_area,      null: false
+      t.boolean :metro_area,     null: false
       t.string :year,            null: false
       t.belongs_to :fmr_dataset, index: true
 

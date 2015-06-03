@@ -32,7 +32,10 @@ class SaveSpreadsheetToDbService
 
         row = Hash.new
         row_object.to_a.each_with_index do |cell, index|
-          row[column_headers[index]] = cell if column_headers[index]
+          if column_headers[index]
+            cell = (cell.is_a? Float) ? cell.to_int : cell
+            row[column_headers[index]] = cell
+          end
         end
 
         @rows[row['metro_code']] ||= Hash.new

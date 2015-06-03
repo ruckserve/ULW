@@ -8,6 +8,8 @@ class CalculatesController < ApplicationController
 
   # GET /calculates/new
   def new
+    @fmr_areas = FmrArea.map_by_state
+    render layout: false
   end
 
 private
