@@ -9,6 +9,7 @@ class CalculatesController < ApplicationController
   # GET /calculates/new
   def new
     @fmr_areas = FmrArea.map_by_state
+    response.headers.delete 'X-Frame-Options'
     render layout: false
   end
 
