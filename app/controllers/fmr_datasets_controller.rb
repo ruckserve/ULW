@@ -18,10 +18,6 @@ class FmrDatasetsController < ApplicationController
     @fmr_dataset.dataset_var = DatasetVar.last || DatasetVar.new
   end
 
-  # GET /fmr_datasets/1/edit
-  def edit
-  end
-
   # POST /fmr_datasets
   # POST /fmr_datasets.json
   def create
@@ -67,20 +63,6 @@ class FmrDatasetsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /fmr_datasets/1
-  # PATCH/PUT /fmr_datasets/1.json
-  def update
-    respond_to do |format|
-      if @fmr_dataset.update(fmr_dataset_params)
-        format.html { redirect_to @fmr_dataset, notice: 'Fmr dataset was successfully updated.' }
-        format.json { render :show, status: :ok, location: @fmr_dataset }
-      else
-        format.html { render :edit }
-        format.json { render json: @fmr_dataset.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   # DELETE /fmr_datasets/1
   # DELETE /fmr_datasets/1.json
   def destroy
@@ -91,23 +73,23 @@ class FmrDatasetsController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_fmr_dataset
-      @fmr_dataset = FmrDataset.find(params[:id])
-    end
+private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_fmr_dataset
+    @fmr_dataset = FmrDataset.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def fmr_dataset_params
-      params.require(:fmr_dataset).permit(:requested_by, :data_year, :method, :description)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def fmr_dataset_params
+    params.require(:fmr_dataset).permit(:requested_by, :data_year, :method, :description)
+  end
 
-    def dataset_var_params
-      params.require(:fmr_dataset).require(:dataset_var_attributes).
-        permit(:sheetname, :fmr0, :fmr1, :fmr2, :fmr3, :fmr4, :metro_code, :metro_area, :area_name, :state)
-    end
+  def dataset_var_params
+    params.require(:fmr_dataset).require(:dataset_var_attributes).
+      permit(:sheetname, :fmr0, :fmr1, :fmr2, :fmr3, :fmr4, :metro_code, :metro_area, :area_name, :state)
+  end
 
-    def filename_params
-      filename = params.require(:fmr_dataset).require(:dataset_var_attributes).permit(:filename)
-    end
+  def filename_params
+    filename = params.require(:fmr_dataset).require(:dataset_var_attributes).permit(:filename)
+  end
 end

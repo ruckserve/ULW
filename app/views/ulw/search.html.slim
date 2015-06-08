@@ -1,0 +1,27 @@
+h3 Calculate For Your Area
+
+= label_tag 'state'
+= select_tag('state', state_opts(@fmr_areas.keys), state_attrs)
+br
+- @fmr_areas.each do |state, fmr_group|
+  .collapse.state-form id=state
+    ul.nav.nav-tabs
+      li.active
+        = link_to('By Metro Area', "##{state}metro", data: {toggle: 'tab'})
+      li
+        = link_to('By County or Town',  "##{state}rural", data: {toggle: 'tab'})
+    br
+    .tab-content
+      - %w(metro rural).each do |area|
+        .tab-pane id=(state + area) class=('active' if area == 'metro')
+          = form_tag(ulw_path, {class: 'fmr-form', method: 'get', data: {remote: true}, id: "#{state}_#{area}"}) do
+            = label_tag 'metro_code', 'Select Region'
+            = select_tag 'metro_code', area_opts(fmr_group[area]), area_attrs
+            br
+            = label_tag 'bedrooms', 'Number of Bedrooms'
+            = select_tag 'bedrooms', options_for_select(0..4), area_attrs
+            br
+            = submit_tag 'Calculate', class: 'btn btn-default btn-large'
+
+br
+p#response

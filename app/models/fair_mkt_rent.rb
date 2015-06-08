@@ -7,7 +7,7 @@ class FairMktRent < ActiveRecord::Base
   validates :metro_code,
     uniqueness: { scope: [:year, :fmr_dataset] }
 
-  def by_metro_code(mcode, year = Time.now.year)
-    find_by(metro_code: mcode, year: year)
+  def self.by_metro_code(mcode, year = Time.now.year)
+    find_by({year: year}.merge(mcode))
   end
 end
