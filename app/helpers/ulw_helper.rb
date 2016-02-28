@@ -15,4 +15,11 @@ module UlwHelper
   def area_attrs
     { class: 'form-control' }
   end
+
+  def bedroom_opts
+    (0..4).map do |n|
+      name = n == 0 ? 'Studio/Efficiency' : n.to_s
+      [ name, n ]
+    end
+  end
 end

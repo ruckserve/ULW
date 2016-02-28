@@ -19,7 +19,7 @@ br
             = select_tag 'metro_code', area_opts(fmr_group[area]), area_attrs
             br
             = label_tag 'bedrooms', 'Number of Bedrooms'
-            = select_tag 'bedrooms', options_for_select(0..4), area_attrs
+            = select_tag 'bedrooms', options_for_select(bedroom_opts), area_attrs
             br
             = submit_tag 'Calculate', class: 'btn btn-default btn-large'
 
