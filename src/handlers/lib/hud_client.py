@@ -13,7 +13,10 @@ class HUDClient():
         return session
 
     def get_states(self):
-        return self.session.get(fmr_base_url + "/listStates")
+        response = self.session.get(self.fmr_base_url + "/listStates")
+        return response.json()
 
     def get_state_data(self, state_code):
-        return self.session.get(fmr_base_url + "/statedata/" + state_code)
+        response = self.session.get(
+            self.fmr_base_url + "/statedata/" + state_code)
+        return response.json()
