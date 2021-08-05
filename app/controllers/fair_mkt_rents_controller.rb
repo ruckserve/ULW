@@ -1,3 +1,4 @@
+# TODO: change this to pull from HUD API
 class FairMktRentsController < ApplicationController
   before_action :set_fair_mkt_rent, only: [:show, :edit, :update, :destroy]
 
