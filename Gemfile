@@ -1,41 +1,41 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.0'
-gem 'puma', '~> 2.11.3'
-gem 'pg', '~> 0.18.1'
+gem 'rails', '~> 6.0.0'
+gem 'puma'
+gem 'pg'
 
-gem 'spreadsheet', '~> 1.0.3'
-gem 'slim-rails', '~> 3.0.1'
-gem 'simple_form', '~> 3.1.0'
-gem 'jquery-rails', '~> 4.0.3'
-gem 'turbolinks', '~> 2.5.3'
-gem 'bootstrap-sass', '~> 3.3.4.1'
-gem 'autoprefixer-rails', '~> 5.1.11'
-gem 'rails_12factor', '~> 0.0.3'
+gem 'spreadsheet'
+gem 'slim-rails'
+gem 'simple_form'
+gem 'jquery-rails'
+gem 'turbolinks'
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
+gem 'rails_12factor'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder'
 
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'sdoc'
 
 group :development, :test do
   # rspec for tests
   gem 'rspec-rails'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'pry', '~> 0.10.1'
-  gem 'pry-rails', '~> 0.3.4'
-  gem 'byebug', '~> 4.0.5'
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'byebug'
 
-  gem 'hirb', '~> 0.7.3'
+  gem 'hirb'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
 
 group :assets do
-  gem 'therubyracer'
-  gem 'coffee-rails', "~> 4.1.0"
-  gem 'uglifier', '~> 2.7.1'
+  gem 'listen'
+  gem 'coffee-rails'
+  gem 'uglifier'
 end
