@@ -12,7 +12,7 @@ class UlwController < ApplicationController
     rent_percentage_of_income = 30.00 / 100.00
 
     ulw = ( yearly_rent / rent_percentage_of_income ) / yearly_working_hours
-    ulw = BigDecimal.new(ulw.to_s).round(2)
+    ulw = ulw.round(2).to_s
     display_string = 'The Universal Living Wage for this type of housing in your area is: '
     display_string += view_context.number_to_currency(ulw) + ' per hour'
 
@@ -26,6 +26,6 @@ class UlwController < ApplicationController
 
 private
   def metro_code_params
-    params.permit(:metro_code).symbolize_keys
+    params.permit(:metro_code)
   end
 end
